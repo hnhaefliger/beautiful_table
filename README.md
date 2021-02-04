@@ -22,7 +22,7 @@ for i in range(10):
 ```python3
 import beautiful_table
 
-table = beautiful_table.BeautifulTable(['row name', 'col1', 'col2', 'col3'], padding=2, maxes=[20, 10, 10, 10])
+table = beautiful_table.BeautifulTable(['row name', 'col1', 'col2', 'col3'], padding=3, maxes=[20, 10, 10, 10])
 
 for i in range(10):
     table.printrow([i for j in range(3)])
