@@ -1,5 +1,11 @@
 class BeautifulTable:
+    '''
+    Class for printing table-like data
+    '''
     def __init__(self, cols, padding=2, maxes=None):
+        '''
+        Define maximum column widths based on datatype and print column titles
+        '''
         if maxes == None:
             self.maxes = [len(col) for col in cols]
 
@@ -23,6 +29,9 @@ class BeautifulTable:
         self.printrow(cols)
 
     def printrow(self, row):
+        '''
+        Print a row from the table
+        '''
         if hasattr(row, '__getitem__') and type(row) != str:
             if len(row) != len(self.cols):
                 raise IndexError('Row dimensions must match table dimensions')
