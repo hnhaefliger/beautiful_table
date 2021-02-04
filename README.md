@@ -8,3 +8,4 @@ table = beautiful_table.BeautifulTable(['col1', 'col2', 'col3'])
 
 for i in range(10):
   table.printrow([i for j in range(3)])
+´´´
