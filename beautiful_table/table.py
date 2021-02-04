@@ -46,8 +46,3 @@ class BeautifulTable:
         row = (' '*self.padding).join(row)
 
         print(row)
-
-test = BeautifulTable(['a', 'asjndaj', 'ajnsdjas'], padding=5, maxes=[2, 2, 2])
-
-for i in range(10):
-    test.printrow([i, i, i])
