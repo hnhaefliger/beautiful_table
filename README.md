@@ -58,3 +58,21 @@ row name     col1    col2    col3
 3            3       3       3    
 4            4       4       4  
 ```
+
+Custom column dividers
+```python3
+import beautiful_table
+
+table = beautiful_table.BeautifulTable(['row name', 'col1', 'col2', 'col3'], padding=2, maxes=10, split='|')
+
+for i in range(5):
+    table.printrow([i for j in range(4)])
+```
+```
+row name   |col1       |col2       |col3      
+0          |0          |0          |0         
+1          |1          |1          |1         
+2          |2          |2          |2         
+3          |3          |3          |3         
+4          |4          |4          |4
+```
