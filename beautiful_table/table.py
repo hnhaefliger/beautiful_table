@@ -2,10 +2,16 @@ class BeautifulTable:
     '''
     Class for printing table-like data
     '''
-    def __init__(self, cols, padding=2, maxes=None):
+    def __init__(self, cols, padding=2, maxes=None, split=''):
         '''
         Define maximum column widths based on datatype and print column titles
         '''
+        if type(split) != str:
+            raise TypeError('Split must be a string')
+        
+        if len(split) > padding:
+            raise ValueError('Length of split must be smaller or equal to padding')
+        
         if maxes == None:
             self.maxes = [len(col) for col in cols]
 
@@ -25,6 +31,7 @@ class BeautifulTable:
 
         self.padding = padding
         self.cols = cols
+        self.split = split
 
         self.printrow(cols)
 
@@ -43,6 +50,8 @@ class BeautifulTable:
         
         row = [row[i] + ' '*(self.maxes[i] - len(row[i])) for i in range(len(row))]
         row = [row[i][:self.maxes[i]] for i in range(len(row))]
-        row = (' '*self.padding).join(row)
+        
+        split = ' '*(self.padding - len(self.split)) + self.split
+        row = split.join(row)
 
         print(row)
